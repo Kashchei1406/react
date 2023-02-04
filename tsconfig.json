@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "module": "ESNext",
+    // В какую спецификацию компилируем: для поддержки большинства браузеров
+    "target": "es5",
+    //Позволяет писать конструкции jsx (т.к мы используем реакт)
+    "jsx": "react",
+    // Компилятор будет обрабатывать не только TS файлы, но и JS файлы
+    "allowJs": true,
+    /* Определяет то какие импорты будут. Здесь только два свойства: node и classic (в 99.9% процентах используется node)
+    */
+    "moduleResolution": "node",
+    //
+    /*esModuleInterop позволяет работать с пакетами, которые используют
+    *common js как с обычными пакета с помощью import (require() module.export) = common js
+    *import Moment from 'moment';
+    *без флага esModuleInterop результат undefined
+    *console.log(Moment);
+    *c флагом результат [object Object]
+    *console.log(Moment);
+    */
+    "esModuleInterop": true,
+    /*Если какая-либо библиотека не имеет default import,
+     *лоадеры вроде ts-loader или babel-loader автоматически создают их
+     *вместо такого импорта
+     *import * as React from 'react';
+     *можно писать такой
+     *import React from 'react';
+     */
+    "allowSyntheticDefaultImports": true,
+  },
+  /*для того что бы использовать импотры в webpack.config т.к будет падать ошибка*/
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
