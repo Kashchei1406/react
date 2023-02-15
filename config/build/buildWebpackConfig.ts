@@ -59,7 +59,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
             * пропустить через loader
             * Use - в этом поле мы указываем какой лоадер нужно использовать
             * Exclude - исключаем node_modules*/
-            rules: buildLoaders()
+            rules: buildLoaders(options)
         },
         /*
         Resolve - в этом поле указываем расшиерения тех файлов, при импорте которых, мы не будем указывать их расширения(
