@@ -65,7 +65,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
         Resolve - в этом поле указываем расшиерения тех файлов, при импорте которых, мы не будем указывать их расширения(
         Import Component from './component')
         */
-        resolve: buildResolve(),
+        resolve: buildResolve(options),
         /*Wepback - делает карты и по стектрейсу, мы можем понять, где произошла ошибка */
         devtool: isDev ? 'inline-source-map': undefined,
         devServer: isDev ? buildDevServer(options) : undefined,
