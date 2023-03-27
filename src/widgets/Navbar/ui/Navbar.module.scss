@@ -7,6 +7,11 @@
   justify-content: end;
 }
 
+.links--container{
+  display: flex;
+  align-items: center;
+}
+
 .links{
   color: var(--bg-color);
   margin: 0 10px;

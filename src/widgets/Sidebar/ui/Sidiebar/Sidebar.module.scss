@@ -1,0 +1,22 @@
+.Sidebar{
+  width: var(--sidebae-widt);
+  height: calc(100vh - var(--navbar-height));
+  background-color: var(--inverted-bg-color);
+  transition: width 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.collapsed{
+  width: var(--sidebar-width-collapsed);
+}
+
+.switchers{
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
