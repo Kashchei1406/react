@@ -5,9 +5,9 @@ function HomePage() {
   const { t } = useTranslation();
 
   return (
-    <div>
-      {t('homePage')}
-    </div>
+      <div>
+          {t('homePage')}
+      </div>
   );
 }
 

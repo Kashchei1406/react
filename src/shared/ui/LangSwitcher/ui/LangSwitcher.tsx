@@ -14,12 +14,12 @@ export function LangSwitcher({ className }: LangSwitcherProps) {
   };
 
   return (
-    <Button
-      className={classNames(cls.langSwitcher, {}, [])}
-      theme={ThemeButton.CLEAR}
-      onClick={changeLang}
-    >
-      {t('lan-button')}
-    </Button>
+      <Button
+        className={classNames(cls.langSwitcher, {}, [])}
+        theme={ThemeButton.CLEAR}
+        onClick={changeLang}
+      >
+          {t('lan-button')}
+      </Button>
   );
 }
