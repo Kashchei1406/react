@@ -2,6 +2,7 @@ module.exports = {
     env: {
         browser: true,
         es2021: true,
+        jest: true,
     },
     extends: [
         'eslint:recommended',
@@ -22,6 +23,7 @@ module.exports = {
         'i18next',
     ],
     rules: {
+        'indent': [0, 4],
         'react/jsx-indent': [2, 4],
         'linebreak-style': ['error', 'unix'],
         'quotes': ['error', 'single'],
@@ -44,8 +46,6 @@ module.exports = {
         'import/no-extraneous-dependencies': 'warn',
         'react/jsx-first-prop-new-line': [2, "multiline"],
         "i18next/no-literal-string": ['error', ]
-
-
     },
 
     globals: {

@@ -6,24 +6,24 @@ import { buildResolve } from './buildResolve';
 import { buildDevServer } from './buildDevServer';
 
 export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
-  const { mode, paths, isDev } = options;
+    const { mode, paths, isDev } = options;
 
-  return {
+    return {
     /*
         Mode - может быть development и production,
         production - минимизирует код для уменьшения размеров бандла, что бы наше приложение было более легковесное
         development - более удобно читаемый т.е для разработчика, удобнее читать код, удобнее дебажить код
         */
-    mode,
-    /*
+        mode,
+        /*
             Entry - входная точка.
         указывать хардкорно ./src/index.js - это плохая практика пути на разных операционных системах работают по разному.
         Поэтому для создания путей использовать специальные инструменты, поскольку webpack работает в среде Node.js нам доступен
         стандартный модуль path и у него есть функция resolve с помощью которой мы можем склеить участки пути. __dirname - это
         папка в которой мы находимся в данный момент и далее через запятую указываем путь к файлу.
         */
-    entry: paths.entry,
-    /*
+        entry: paths.entry,
+        /*
             Output - это настройки куда и как мы будем делать сборку проекта.
             Filename - как будет называться выходной файл и path т.е путь куда будет собираться проект(принято называть build
         или dist). В квадратных скобках - это шаблоны, позволяющие динамически создавать имя выходного файла. В современных
@@ -33,18 +33,18 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
             Clean - это свойство, добавляется т.к при каждой сборке проекта добавляется новый бандл и что бы удалялись старые
         ненужные версии его мы устанавливаем свойство clean: true.
         * */
-    output: {
-      filename: '[name].[contenthash].js',
-      path: paths.build,
-      clean: true,
-    },
-    /*
+        output: {
+            filename: '[name].[contenthash].js',
+            path: paths.build,
+            clean: true,
+        },
+        /*
         HTMLWebpackPlugin - Нам в проекте нужен html файл и также в него встраивать скрипты которые мы будем писать и для этого
         у webpack есть механизм плагинов. Которые нам могут помочь это сделать. Объектом мы можем передавать настройки.
         Template - указываем пусть к файлу который хотим использовать как шаблон (чтобы довился блок с классом root).
         * */
-    plugins: buildPlugins(options),
-    /*
+        plugins: buildPlugins(options),
+        /*
         Modules.
         По дефолту мы можем работать только с фалами у которых расширение ".js" и что бы нам начать работать с TypeScript(А это
         сейчас лучшая практика, чтобы сделать наше приложения более устойчивым и работоспособным) нам нужно подготовить webpack.
@@ -52,22 +52,22 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
         1 Устанавливаем typescript и ts-loader
         2 Устанавливаем rules
         */
-    module: {
-      /* Rules - это наверное одно из самых важных полей. Здесь мы конфигурируем лоадеры, для того чтобы обрабатывать
+        module: {
+            /* Rules - это наверное одно из самых важных полей. Здесь мы конфигурируем лоадеры, для того чтобы обрабатывать
             * файлы выходящия за рамки JavaScript (png, css, typescript...)
             * Test - в поле test мы указываем регулярное выражение по которому мы будем находить файлы, которые нужно
             * пропустить через loader
             * Use - в этом поле мы указываем какой лоадер нужно использовать
             * Exclude - исключаем node_modules */
-      rules: buildLoaders(options),
-    },
-    /*
+            rules: buildLoaders(options),
+        },
+        /*
         Resolve - в этом поле указываем расшиерения тех файлов, при импорте которых, мы не будем указывать их расширения(
         Import Component from './component')
         */
-    resolve: buildResolve(options),
-    /* Wepback - делает карты и по стектрейсу, мы можем понять, где произошла ошибка */
-    devtool: isDev ? 'inline-source-map' : undefined,
-    devServer: isDev ? buildDevServer(options) : undefined,
-  };
+        resolve: buildResolve(options),
+        /* Wepback - делает карты и по стектрейсу, мы можем понять, где произошла ошибка */
+        devtool: isDev ? 'inline-source-map' : undefined,
+        devServer: isDev ? buildDevServer(options) : undefined,
+    };
 }
