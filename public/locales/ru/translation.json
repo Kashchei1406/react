@@ -4,5 +4,8 @@
   "homePage": "Главная страница",
   "main-link": "Главная",
   "about-link": "О нас",
-  "sfa": "sfa"
+  "sfa": "toggle",
+  "Page not found": "Cтраница не найдена"
+
+
 }

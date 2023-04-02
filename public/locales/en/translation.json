@@ -4,5 +4,6 @@
   "homePage": "Main Page",
   "main-link": "Main",
   "about-link": "About",
-  "sfa": "sfa"
+  "sfa": "toggle",
+  "Page not found": "Page not found"
 }
