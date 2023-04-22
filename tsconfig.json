@@ -2,7 +2,7 @@
   "compilerOptions": {
     "outDir": "./dist/",
     "noImplicitAny": true,
-    "module": "ESNext",
+    //"module": "ESNext",
     // В какую спецификацию компилируем: для поддержки большинства браузеров
     "target": "es5",
     //Позволяет писать конструкции jsx (т.к мы используем реакт)
@@ -38,7 +38,10 @@
   /*для того что бы использовать импотры в webpack.config т.к будет падать ошибка*/
   "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS"
+      "module": "CommonJS",
     }
-  }
+  },
+  "includes": [
+      "config/jest/jest-setup.ts",
+    ]
 }

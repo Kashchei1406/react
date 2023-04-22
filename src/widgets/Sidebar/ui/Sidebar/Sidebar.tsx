@@ -18,8 +18,12 @@ export function Sidebar({ className }: SidebarProps) {
     };
 
     return (
-        <div className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}>
+        <div
+          data-testid="sidebar"
+          className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}
+        >
             <button
+              data-testid="sidebar__toggle"
               type="button"
               onClick={changeCollapse}
             >

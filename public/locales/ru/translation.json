@@ -5,7 +5,9 @@
   "main-link": "Главная",
   "about-link": "О нас",
   "sfa": "toggle",
-  "Page not found": "Cтраница не найдена"
-
-
+  "Page not found": "Cтраница не найдена",
+  "Что - то пошло не так": "Что - то пошло не так",
+  "Something was wrong": "Что-то пошло не так",
+  "Reload page": "Перезагрузить страницу",
+  "BugBtn": "BugBtn"
 }

@@ -45,7 +45,8 @@ module.exports = {
         'no-underscore-dangle': 'warn',
         'import/no-extraneous-dependencies': 'warn',
         'react/jsx-first-prop-new-line': [2, "multiline"],
-        "i18next/no-literal-string": ['error', ]
+        "i18next/no-literal-string": ['error', ],
+        'import/order': 'warn',
     },
 
     globals: {

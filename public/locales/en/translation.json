@@ -5,5 +5,8 @@
   "main-link": "Main",
   "about-link": "About",
   "sfa": "toggle",
-  "Page not found": "Page not found"
+  "Page not found": "Page not found",
+  "Something was wrong": "Something was wrong",
+  "Reload page": "Reload page",
+  "BugBtn": "BugBtn"
 }
